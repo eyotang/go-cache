@@ -190,3 +190,9 @@ func unexportedNewSharded(defaultExpiration, cleanupInterval time.Duration, shar
 	}
 	return SC
 }
+
+var SHARD_COUNT = 32
+
+func NewShared(defaultExpiration, cleanupInterval time.Duration) *unexportedShardedCache {
+	return unexportedNewSharded(defaultExpiration, cleanupInterval, SHARD_COUNT)
+}
